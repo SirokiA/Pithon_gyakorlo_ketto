@@ -41,11 +41,24 @@
 
 #Negyedik feladat
 
-szam= int(input("Adj meg egy számot: "))
+#szam= int(input("Adj meg egy számot: "))
 
-osszeg=0
+#osszeg=0
 
-for i in str(abs(szam)):
-    osszeg += int(i)
+#for i in str(abs(szam)):
+#    osszeg += int(i)
 
-print(f"A(z) {szam} szám számjegyeinek összege: {osszeg}")
+#print(f"A(z) {szam} szám számjegyeinek összege: {osszeg}")
+
+
+#Ötödik feladat
+
+lista=[1,2,3,4,5,6,7,8,9,]
+
+negyzet=[]
+
+for i in lista:
+    negyzet.append(i**2)
+
+print("Eredeti lista:", lista)
+print("Négyzetre emelt lista:",negyzet)
