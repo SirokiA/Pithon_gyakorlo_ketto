@@ -53,12 +53,27 @@
 
 #Ötödik feladat
 
-lista=[1,2,3,4,5,6,7,8,9,]
+#lista=[1,2,3,4,5,6,7,8,9,]
 
-negyzet=[]
+#negyzet=[]
 
-for i in lista:
-    negyzet.append(i**2)
+#for i in lista:
+#    negyzet.append(i**2)
 
-print("Eredeti lista:", lista)
-print("Négyzetre emelt lista:",negyzet)
+#print("Eredeti lista:", lista)
+#print("Négyzetre emelt lista:",negyzet)
+
+
+#Hatodik feladat
+
+szemelyek = {}
+
+for i in range(5):
+    nev=input(f"Add meg a {i+1}. személy nevét: ")
+    kor=int(input(f"Add meg {nev} életkorát:"))
+    szemelyek[nev]= kor
+
+legidosebb_nev = max(szemelyek, key=szemelyek.get)
+legidosebb_kor = szemelyek[legidosebb_nev]
+
+print(f"A legidősebb személy: {legidosebb_nev}, életkor: {legidosebb_kor}")
