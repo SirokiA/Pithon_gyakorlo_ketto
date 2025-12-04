@@ -129,23 +129,92 @@
 
 #Kilencedik feladat
 
-class Student:
-    def __init__(self, nev, eletkor, atlag):
+#class Student:
+#    def __init__(self, nev, eletkor, atlag):
+#        self.nev = nev
+#        self.eletkor = eletkor
+#        self.atlag = atlag
+
+#    def adat (self):
+#        print(f"Név: {self.nev}, Életkor {self.eletkor}, Átlag {self.atlag}")
+
+#tanulok = []
+
+#for i in range(3):
+#        nev = input(f"Add meg az {i+1}. tanuló nevét:")
+#        eletkor = int(input(f"Add meg {nev} életkorát:"))
+#        atlag = int(input(f"Add meg {nev} átlagát:"))
+#        tanulok.append(Student(nev, eletkor, atlag))
+
+#legjobb = max(tanulok, key=lambda x: x.atlag)
+
+#print(f"A legjobb átlagú tanuló: {legjobb.nev}, Átlag: {legjobb.atlag}")
+
+
+
+#Tizedik feladat
+
+class Allat:
+    def __init__(self, nev, eletkorr):
         self.nev = nev
-        self.eletkor = eletkor
-        self.atlag = atlag
+        self.eletkor = eletkorr
 
-    def adat (self):
-        print(f"Név: {self.nev}, Életkor {self.eletkor}, Átlag {self.atlag}")
+    def adat(self):
+        print(f"Név: {self.nev}, Életkor: {self.eletkor}")
 
-tanulok = []
+class Kutya(Allat):
+    def __init__(self, nev, eletkor, fajta):
+        super().__init__(nev, eletkor)
+        self.fajta = fajta
+    
+    def hang(self):
+        print(f"{self.nev} mondja: Vau-Vau")
 
-for i in range(3):
-        nev = input(f"Add meg az {i+1}. tanuló nevét:")
-        eletkor = int(input(f"Add meg {nev} életkorát:"))
-        atlag = int(input(f"Add meg {nev} átlagát:"))
-        tanulok.append(Student(nev, eletkor, atlag))
+    def adat(self):
+        super(). adat()
+        print(f"Fajta: {self.fajta}")
 
-legjobb = max(tanulok, key=lambda x: x.atlag)
+class Macska(Allat):
+    def __init__(self, nev, eletkor, szin):
+        super().__init__(nev, eletkor)
+        self.szin =szin
 
-print(f"A legjobb átlagú tanuló: {legjobb.nev}, Átlag: {legjobb.atlag}")
+    def hang(self):
+        print(f"{self.nev} mondja: Miau")
+
+    def adat(self):
+        super(). adat()
+        print(f"Szín: {self.szin}")
+
+
+
+#kutyus = Kutya("Bodri", 3, "Golden Retriever")
+#macska = Macska("Cirmos", 2, "Szürke")
+
+#kutyus.adat()
+#kutyus.hang()
+
+#print()  
+
+#macska.adat()
+#macska.hang()
+
+
+kutya_nev=input(f"Kérem a kutya nevét:")
+kutya_eletkor=int(input(f"Kérem {kutya_nev} életkorát:"))
+kutya_fajta=input(f"Add meg {kutya_nev} fajtáját:")
+
+macska_nev=input(f"Add meg a mcsaka nevét:")
+macska_eletkor=int(input(f"add meg {macska_nev} életkorát: "))
+macska_szin=input(f"Add meg {macska_nev} szinét: ")
+
+kutyus = Kutya(kutya_nev, kutya_eletkor, kutya_fajta)
+macska = Macska(macska_nev, macska_eletkor, macska_szin)
+
+print("\n-- Kutya --")
+kutyus.adat()
+kutyus.hang()
+
+print("\n-- Macska --")
+macska.adat()
+macska.hang()
