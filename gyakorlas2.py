@@ -81,17 +81,46 @@
 
 #Hetedik feladat
 
-class Auto:
-    def __init__(self, marka, tipus, evjarat):
-        self.marka = marka
-        self.tipus = tipus
-        self.evjarat = evjarat
+#class Auto:
+#    def __init__(self, marka, tipus, evjarat):
+#        self.marka = marka
+#        self.tipus = tipus
+#        self.evjarat = evjarat
 
-    def adat(self):
-        print(f"Márka: {self.marka}, tipus: {self.tipus}, évjárat {self.evjarat}")
+#    def adat(self):
+#        print(f"Márka: {self.marka}, tipus: {self.tipus}, évjárat {self.evjarat}")
 
-auto1 = Auto("Toyota", "Corolla", 2015)
-auto2 = Auto("Ford", "Focus", 2018)
+#auto1 = Auto("Toyota", "Corolla", 2015)
+#auto2 = Auto("Ford", "Focus", 2018)
 
-auto1.adat()
-auto2.adat()
+#auto1.adat()
+#auto2.adat()
+
+
+#Nyolcadik feladat
+
+class BankAccount:
+    def __init__(self,nev,egyenleg=0):
+        self.nev = nev
+        self.egyenleg = egyenleg
+
+    def deposit(self, osszeg):
+        self.egyenleg += osszeg
+        print(f"{osszeg} befizetve. új egyenleg: {self.egyenleg}")
+
+    def withdraw(self, osszeg):
+        if osszeg > self.egyenleg:
+            print("Nincs elég pénz a számlásn!")
+
+    def get_balance(self):
+        return self.egyenleg
+    
+
+szamla1 = BankAccount("Anna", 1000)
+szamla2 = BankAccount("Béla", 500)
+
+szamla1.deposit(200)   # Anna számlája: 1200
+szamla2.deposit(300)   # Béla számlája: 800
+
+print(f"Anna egyenlege: {szamla1.get_balance()}")
+print(f"Béla egyenlege: {szamla2.get_balance()}")
