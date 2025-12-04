@@ -66,14 +66,32 @@
 
 #Hatodik feladat
 
-szemelyek = {}
+#szemelyek = {}
 
-for i in range(5):
-    nev=input(f"Add meg a {i+1}. személy nevét: ")
-    kor=int(input(f"Add meg {nev} életkorát:"))
-    szemelyek[nev]= kor
+#for i in range(5):
+#    nev=input(f"Add meg a {i+1}. személy nevét: ")
+#    kor=int(input(f"Add meg {nev} életkorát:"))
+#    szemelyek[nev]= kor
 
-legidosebb_nev = max(szemelyek, key=szemelyek.get)
-legidosebb_kor = szemelyek[legidosebb_nev]
+#legidosebb_nev = max(szemelyek, key=szemelyek.get)
+#legidosebb_kor = szemelyek[legidosebb_nev]
 
-print(f"A legidősebb személy: {legidosebb_nev}, életkor: {legidosebb_kor}")
+#print(f"A legidősebb személy: {legidosebb_nev}, életkor: {legidosebb_kor}")
+
+
+#Hetedik feladat
+
+class Auto:
+    def __init__(self, marka, tipus, evjarat):
+        self.marka = marka
+        self.tipus = tipus
+        self.evjarat = evjarat
+
+    def adat(self):
+        print(f"Márka: {self.marka}, tipus: {self.tipus}, évjárat {self.evjarat}")
+
+auto1 = Auto("Toyota", "Corolla", 2015)
+auto2 = Auto("Ford", "Focus", 2018)
+
+auto1.adat()
+auto2.adat()
