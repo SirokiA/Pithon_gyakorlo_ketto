@@ -99,28 +99,53 @@
 
 #Nyolcadik feladat
 
-class BankAccount:
-    def __init__(self,nev,egyenleg=0):
-        self.nev = nev
-        self.egyenleg = egyenleg
+#class BankAccount:
+#    def __init__(self,nev,egyenleg=0):
+#        self.nev = nev
+#        self.egyenleg = egyenleg
 
-    def deposit(self, osszeg):
-        self.egyenleg += osszeg
-        print(f"{osszeg} befizetve. új egyenleg: {self.egyenleg}")
+#    def deposit(self, osszeg):
+#        self.egyenleg += osszeg
+#        print(f"{osszeg} befizetve. új egyenleg: {self.egyenleg}")
 
-    def withdraw(self, osszeg):
-        if osszeg > self.egyenleg:
-            print("Nincs elég pénz a számlásn!")
+#    def withdraw(self, osszeg):
+#        if osszeg > self.egyenleg:
+#            print("Nincs elég pénz a számlásn!")
 
-    def get_balance(self):
-        return self.egyenleg
+#    def get_balance(self):
+#        return self.egyenleg
     
 
-szamla1 = BankAccount("Anna", 1000)
-szamla2 = BankAccount("Béla", 500)
+#szamla1 = BankAccount("Anna", 1000)
+#szamla2 = BankAccount("Béla", 500)
 
-szamla1.deposit(200)   # Anna számlája: 1200
-szamla2.deposit(300)   # Béla számlája: 800
+#szamla1.deposit(200)   # Anna számlája: 1200
+#szamla2.deposit(300)   # Béla számlája: 800
 
-print(f"Anna egyenlege: {szamla1.get_balance()}")
-print(f"Béla egyenlege: {szamla2.get_balance()}")
+#print(f"Anna egyenlege: {szamla1.get_balance()}")
+#print(f"Béla egyenlege: {szamla2.get_balance()}")
+
+
+
+#Kilencedik feladat
+
+class Student:
+    def __init__(self, nev, eletkor, atlag):
+        self.nev = nev
+        self.eletkor = eletkor
+        self.atlag = atlag
+
+    def adat (self):
+        print(f"Név: {self.nev}, Életkor {self.eletkor}, Átlag {self.atlag}")
+
+tanulok = []
+
+for i in range(3):
+        nev = input(f"Add meg az {i+1}. tanuló nevét:")
+        eletkor = int(input(f"Add meg {nev} életkorát:"))
+        atlag = int(input(f"Add meg {nev} átlagát:"))
+        tanulok.append(Student(nev, eletkor, atlag))
+
+legjobb = max(tanulok, key=lambda x: x.atlag)
+
+print(f"A legjobb átlagú tanuló: {legjobb.nev}, Átlag: {legjobb.atlag}")
